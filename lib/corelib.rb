@@ -1,0 +1,8 @@
+require "corelib/version"
+require "corelib/array/alias"
+require "corelib/array/core"
+require "corelib/array/math"
+require "corelib/boolean/true"
+require "corelib/boolean/false"
+require "corelib/numeric/core"
+require "corelib/string/core"
