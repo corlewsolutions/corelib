@@ -9,9 +9,9 @@ Gem::Specification.new do |gem|
   gem.version       = Corelib::VERSION
   gem.authors       = ["Corlew Solutions"]
   gem.email         = ["support@corlewsolutions.com"]
-  gem.description   = %q{"corelib" is a collection of extensions to the base Ruby classes}
-  gem.summary       = %q{"corelib" is a collection of extensions to the base Ruby classes}
-  gem.homepage      = ""
+  gem.description   = %q{"Useful extensions & additions to the Ruby core classes}
+  gem.summary       = %q{"Useful extensions & additions to the Ruby core classes}
+  gem.homepage      = "https://github.com/corlewsolutions/corelib.git"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
