@@ -1,9 +1,7 @@
 class FalseClass
 
-	def to_yes_no(format="C")
-		return "no" if format == "L"
-		return "NO" if format == "U"
-		"No"
+	def to_yes_no(options={})
+    options.fetch(:if_no, "No")
 	end
 
 end
