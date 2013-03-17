@@ -1,8 +1,8 @@
 class Numeric
 
   #format accepts (C-Capitalized, U-Uppercase, L-Lowercase)
-  def to_yes_no(format="C")
-    (self == 1 || self == 1.0).to_yes_no(format)
+  def to_yes_no(options={})
+    (self == 1 || self == 1.0).to_yes_no(options)
   end
 
   #Assumes numeric value is in seconds
