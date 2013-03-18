@@ -4,4 +4,8 @@ class NilClass
     options.fetch(:if_nil, "")
   end
 
+  def not_nil?
+    false
+  end
+
 end

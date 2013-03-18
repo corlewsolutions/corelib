@@ -9,4 +9,10 @@ describe NilClass do
       nil.to_yes_no(:if_nil => "Unspecified") == "Unspecified"
     end
   end
+
+  describe "#not_nil?" do
+    it 'works' do
+      nil.not_nil?.should == false
+    end
+  end
 end

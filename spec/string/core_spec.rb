@@ -97,5 +97,10 @@ describe String do
       str.index_of_next_space_from(14).should == 15
     end
   end
-
+  describe "#not_empty?" do
+    it "works" do
+      "".not_empty?.should == false
+      "test".not_empty?.should == true
+    end
+  end
 end

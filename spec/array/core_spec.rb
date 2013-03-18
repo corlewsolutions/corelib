@@ -62,4 +62,12 @@ describe Array do
       passes.size.should == 1
     end
   end
+
+  describe "#not_empty?" do
+    it "works" do
+      [].not_empty?.should == false
+      [1].not_empty?.should == true
+    end
+  end
+
 end
