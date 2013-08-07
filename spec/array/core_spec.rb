@@ -70,4 +70,21 @@ describe Array do
     end
   end
 
+  describe "#add_all" do
+    it "adds items correctly" do
+      [].add_all([1,2]).should == [1,2]
+    end
+    it "does not create a new array" do
+      a = []
+      b = a.add_all([1,2])
+      a.should === b
+    end
+    it "flattens multidimensional array" do
+      [].add_all([0,[1,2]]).should == [0,1,2]
+    end
+    it "does not flatten multidimensional array when option is set" do
+      [].add_all([0,[1,2]], :flatten => false).should == [0,[1,2]]
+    end
+  end
+
 end

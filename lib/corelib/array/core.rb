@@ -26,4 +26,10 @@ class Array
     !self.empty?
   end
 
+  def add_all(arr, options={})
+    flatten = options.fetch(:flatten, true)
+    a = flatten ? arr.flatten : arr
+    self.concat(a)
+  end
+
 end
