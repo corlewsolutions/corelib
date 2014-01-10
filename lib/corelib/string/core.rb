@@ -1,11 +1,47 @@
 class String
 
+  #TODO - Needs Tests
+  def last
+    return nil if self.empty?
+    self[-1,1]
+  end
+
+  #TODO - Needs Tests
+  def first
+    return nil if self.empty?
+    self[0,1]
+  end
+
+  #TODO - Needs Tests
+  # Combines two strings together with a separator.
+  def combine(str, options={})
+    strip = options.fetch(:strip, true)
+    return compact ? self.strip : self.dup if str.nil? or str.empty?
+    return compact ? str.strip : str.dup if self.empty?
+    separator = options.fetch(:separator, " ")
+
+    if strip
+      pre = self.strip
+      post = str.strip
+    else
+      pre = self.dup
+      post = str.dup
+    end
+
+    return pre + post if separator.empty?
+
+    # TODO - Support other separators other than spaces.  For instance if someone wanted to join with a comma
+    # and pre ended with a comma, we could have an option to disallow repeating
+    pre + separator + post
+
+  end
+
   #Does the same thing as String#contact, but allows a separator to be inserted between the
   #two strings.
   def concat_with(str, separator="")
     return self if str.nil? or str.empty?
     return self.concat(str) if self.empty?
-    self.concat(separator) if !separator.empty?
+    self.concat(separator) unless separator.empty?
     self.concat(str)
   end
 
