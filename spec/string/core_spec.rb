@@ -1,6 +1,14 @@
 require 'spec_helper'
 
 describe String do
+  describe "#combine" do
+    it 'defaults work' do
+      "test".combine("test2").should == "test test2"
+      "".combine("test2").should=="test2"
+      "test".combine("").should == "test"
+    end
+  end
+
   describe "#to_bool" do
     it 'converts to true correctly' do
       "true".to_bool.should == true

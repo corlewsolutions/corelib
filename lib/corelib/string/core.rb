@@ -16,8 +16,8 @@ class String
   # Combines two strings together with a separator.
   def combine(str, options={})
     strip = options.fetch(:strip, true)
-    return compact ? self.strip : self.dup if str.nil? or str.empty?
-    return compact ? str.strip : str.dup if self.empty?
+    (return strip ? self.strip : self.dup) if str.nil? or str.empty?
+    (return strip ? str.strip : str.dup) if self.empty?
     separator = options.fetch(:separator, " ")
 
     if strip
