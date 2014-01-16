@@ -14,3 +14,5 @@ require "corelib/nil/core"
 require "corelib/object/core"
 require "corelib/numeric/core"
 require "corelib/string/core"
+
+require "active_support/all"

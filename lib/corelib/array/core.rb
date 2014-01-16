@@ -1,5 +1,9 @@
 class Array
 
+  def extract_options!
+    last.is_a?(::Hash) ? pop : {}
+  end
+
 	def to_yes_no(options={})
     self.collect {|e| e.to_yes_no(options)}
   end
