@@ -1,16 +1,6 @@
 class String
 
   #TODO - Needs Tests
-  def last
-    self.empty? ? nil : self[-1,1]
-  end
-
-  #TODO - Needs Tests
-  def first
-    self.empty? ? nil : self[0,1]
-  end
-
-  #TODO - Needs Tests
   # Combines two strings together with a separator.
   def combine(*args)
     options = args.extract_options!
