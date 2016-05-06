@@ -30,28 +30,6 @@ class String
     self.to_bool(options).to_yes_no(options)
   end
 
-  #true will always be returned if we can clearly match one of the true cases
-  #In unstrict mode, the string is assumed false if we cannot match true
-  #In strict mode, the string must clearly match a false condition to return false
-  #otherise an error is raised
-  def to_bool(options={})
-    strip = options.fetch(:strip, true)
-    strict = options.fetch(:strict, false)
-    str = strip ? self.strip : self
-    return true if str =~ /\A(true|t|yes|y|1)\Z/i
-
-    if strict
-      return false if str.empty? || str =~ /\A(false|f|no|n|0)\Z/i
-      raise ArgumentError.new("cannot convert \"#{str}\" to boolean")
-    end
-
-    false
-  end
-
-  def not_empty?
-    !self.empty?
-  end
-
   #Returns the subset of a string from [0, position] if string[position] is a space.
   #If string[max] is not a space, it is assumed we are in the middle of a word.
   #and the logic will increase position a little bit to not break in the middle of a word.
