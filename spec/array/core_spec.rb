@@ -1,19 +1,6 @@
 require 'spec_helper'
 
 describe Array do
-	describe "#to_yes_no" do
-    it "converts correctly" do
-      [false, true].to_yes_no.should == ["No", "Yes"]
-      [1, 0].to_yes_no.should == ["Yes", "No"]
-      ["false", "t"].to_yes_no.should == ["No", "Yes"]
-    end
-    it "converts correctly with options" do
-      #This only tests that the options array is correctly passed along
-      #All the various options are tested in other tests
-      [false, true].to_yes_no(:format => "Up").should == ["NO", "YES"]
-    end
-  end
-
   describe "#add_blank_option" do
     it 'adds blank to front of array' do
       array = [["Label 1", 1], ["Label 2", 2]]
