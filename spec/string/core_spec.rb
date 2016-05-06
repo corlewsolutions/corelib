@@ -20,44 +20,7 @@ describe String do
     end
   end
 
-  describe "#to_bool" do
-    it 'converts to true correctly' do
-      "true".to_bool.should == true
-      "TRUE".to_bool.should == true
-      "t".to_bool.should == true
-      "T".to_bool.should == true
-      "1".to_bool.should == true
-      "yes".to_bool.should == true
-      "YES".to_bool.should == true
-    end
-    it 'converts to false correctly in unstrict mode' do
-      "false".to_bool.should == false
-      "r".to_bool.should == false
-      "0".to_bool.should == false
-      "Chuck Norris".to_bool.should == false
-      "".to_bool.should == false
-    end
-    it 'converts correctly when using no_strip' do
-      "false".to_bool(:strip => false).should == false
-      "true".to_bool(:strip => false).should == true
-      "true  ".to_bool(:strip => false).should == false
-      "  1  ".to_bool(:strip => false).should == false
-    end
-    it 'converts to false correctly in strict mode' do
-      "false".to_bool(:strict => true).should == false
-      "FAlSE".to_bool(:strict => true).should == false
-      "f".to_bool(:strict => true).should == false
-      "F".to_bool(:strict => true).should == false
-      "0".to_bool(:strict => true).should == false
-      "".to_bool(:strict => true).should == false
-      "    ".to_bool(:strict => true).should == false
-    end
-    it 'throws an error when not true and not strictly "false"' do
-      expect{ "blah".to_bool(:strict => true) }.to raise_error(ArgumentError)
-    end
-  end
-
-  describe "#to_yes_no" do
+    describe "#to_yes_no" do
     it 'converts correctly with no options' do
       "false".to_yes_no.should == "No"
       "FALSE".to_yes_no.should == "No"
