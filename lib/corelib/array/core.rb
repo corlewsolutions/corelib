@@ -1,10 +1,6 @@
 class Array
 
-  def extract_options!
-    last.is_a?(::Hash) ? pop : {}
-  end
-
-	def to_yes_no(options={})
+  def to_yes_no(options={})
     self.collect {|e| e.to_yes_no(options)}
   end
 
@@ -24,10 +20,6 @@ class Array
     self.each_with_index do |item, index|
       index + 1 == my_size ? yield(item, true) : yield(item, false)
     end
-  end
-
-  def not_empty?
-    !self.empty?
   end
 
   def add_all(arr, options={})
