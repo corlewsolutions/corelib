@@ -63,13 +63,6 @@ describe Array do
     end
   end
 
-  describe "#not_empty?" do
-    it "works" do
-      [].not_empty?.should == false
-      [1].not_empty?.should == true
-    end
-  end
-
   describe "#add_all" do
     it "adds items correctly" do
       [].add_all([1,2]).should == [1,2]
