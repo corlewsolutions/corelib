@@ -26,10 +26,6 @@ class String
     self.concat(str)
   end
 
-  def to_yes_no(options={})
-    self.to_bool(options).to_yes_no(options)
-  end
-
   #Returns the subset of a string from [0, position] if string[position] is a space.
   #If string[max] is not a space, it is assumed we are in the middle of a word.
   #and the logic will increase position a little bit to not break in the middle of a word.
