@@ -17,15 +17,6 @@ class String
     str
   end
 
-  #Does the same thing as String#contact, but allows a separator to be inserted between the
-  #two strings.
-  def concat_with(str, separator="")
-    return self if str.nil? or str.empty?
-    return self.concat(str) if self.empty?
-    self.concat(separator) unless separator.empty?
-    self.concat(str)
-  end
-
 protected
 
     def priv_combine(str, options={})
