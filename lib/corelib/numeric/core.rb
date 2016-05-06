@@ -1,10 +1,5 @@
 class Numeric
 
-  #format accepts (C-Capitalized, U-Uppercase, L-Lowercase)
-  def to_yes_no(options={})
-    (self == 1 || self == 1.0).to_yes_no(options)
-  end
-
   #Assumes numeric value is in seconds
   def to_days_hours_minutes_seconds
     total_seconds = self.to_i
