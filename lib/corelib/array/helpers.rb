@@ -5,20 +5,6 @@ class Array
     sub.nil? ? nil : sub[0]
   end
 
-  def self.time_clock_type_options(options={})
-    exemplify = options.fetch(:exemplify, true)
-    id = options.fetch(:start_id, 1)
-    return [["12-Hour Clock", id], ["24-Hour Clock", id+1]] if !exemplify
-
-    t = Time.now
-    s = options.fetch(:separater, " - ")
-    h = options.fetch(:day, t.strftime("%l"))
-    m = options.fetch(:month, t.strftime("%m"))
-    ap =options.fetch(:am_pm, t.strftime("%P"))
-    hm = options.fetch(:day24, t.strftime("%H"))
-    [["12-Hour Clock#{s}(#{h}:#{m}#{ap})", id], ["24-Hour Clock#{s}(#{hm}:#{m})", id+1]]
-  end
-
   def self.date_format_options(options={})
     exemplify = options.fetch(:exemplify, true)
     exemplify ? date_format_options_exemplified_raw(options) : date_format_options_raw(options)
