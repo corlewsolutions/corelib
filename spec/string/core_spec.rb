@@ -20,31 +20,6 @@ describe String do
     end
   end
 
-    describe "#to_yes_no" do
-    it 'converts correctly with no options' do
-      "false".to_yes_no.should == "No"
-      "FALSE".to_yes_no.should == "No"
-      "  FALSE  ".to_yes_no.should == "No"
-      "f".to_yes_no.should == "No"
-      "F".to_yes_no.should == "No"
-      "".to_yes_no.should == "No"
-      "   ".to_yes_no.should == "No"
-      "0".to_yes_no.should == "No"
-      "true".to_yes_no.should == "Yes"
-      "TRUE".to_yes_no.should == "Yes"
-      "t".to_yes_no.should == "Yes"
-      "T".to_yes_no.should == "Yes"
-      "1".to_yes_no.should == "Yes"
-      "  1  ".to_yes_no.should == "Yes"
-    end
-    it 'converts correctly with format options' do
-      "false".to_yes_no(:format => "Up").should == "NO"
-      "false".to_yes_no(:format => "Down").should == "no"
-      "true".to_yes_no(:format => "Up").should == "YES"
-      "true".to_yes_no(:format => "Down").should == "yes"
-    end
-  end
-
   describe "#concat_with" do
     it 'appends correctly' do
       "".concat_with("test").should == "test"
