@@ -6,8 +6,8 @@ class String
   end
 
   #TODO - Needs Tests
-  def first
-    self.empty? ? nil : self[0,1]
+  def first(limit = 1)
+    self[0, limit] || raise(ArgumentError, "negative limit")    
   end
 
   #TODO - Needs Tests
